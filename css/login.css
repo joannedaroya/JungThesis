@@ -1,4 +1,7 @@
+html, body{
+    height: 100%;
 
+}
 
 
 #form1 {
@@ -7,4 +10,57 @@
 
 #title1 {
   padding-left: 200px;
+}
+
+#form2 {
+	padding: 5px 45px 5px 45px;
+}
+
+
+.box {
+	height: 450px;
+	width: 350px;
+	margin:0 auto;
+	border: 1px solid #dadada;
+    border-radius: 2px;
+    border-color: #014fb3;
+
+}
+
+#h31{
+	text-align: center;
+}
+
+.button {
+    background-color: white; /* Green */
+    width: 100%;
+    height: 30px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 1px solid #014fb3;
+}
+
+.button1:hover {
+    background-color: #014fb3;
+    color: white;
+}
+
+#logo1{
+	width: 100px;
+	height: 100px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto
 }

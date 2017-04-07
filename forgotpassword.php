@@ -2,17 +2,19 @@
 <html lang="en">
 
 <head>
-    <title>:::iMARKET:::</title>
+    <title>Forgot Password</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--JQUERY-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--CSS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/design.css" />
 
 </head>
@@ -26,19 +28,18 @@
 
 
         <nav id="navbar-main">
-          <!--Login System Embedded by Jung Start-->
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</button>
+  			<span class="icon-bar"></span>
+  			<span class="icon-bar"></span>
+  			<span class="icon-bar"></span>
+  			</button>
                 </div>
                 <div class="collapse navbar-collapse row" id="myNavbar">
                     <ul class="pull-right">
-                        <?php if(isset($_SESSION['email'])&& $_SESSION['userType'] == 'employee'){ ?>
-                        <li class="upper-links"><a class="links" href="productAdd.php"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
+                        <?php if(isset($_SESSION['email'])){ ?>
+                        <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
                         <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
                         <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
                         <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
@@ -46,37 +47,9 @@
                         <li class="upper-links dropdown"><a class="links">My Account</a>
                             <ul class="dropdown-menu">
                                 <li class="profile-li"><a class="profile-links" href="#">My Order</a></li>
-                                <li class="profile-li"><a class="profile-links" href="accountSetting.php">Account Setting</a></li>
+                                <li class="profile-li"><a class="profile-links" href="#">Account Setting</a></li>
                                 <li class="profile-li"><a class="profile-links" href="#">Change Password </a></li>
-                                <li class="profile-li"><a class="profile-links" href="logout.php">logout</a></li>
-
-                                <?php }elseif(isset($_SESSION['email'])&& $_SESSION['userType'] == 'student'){ ?>
-                                <li class="upper-links"><a class="links" href="productAdd.php"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
-                                <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
-                                <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
-                                <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
-
-                                <li class="upper-links dropdown"><a class="links">My Account</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="profile-li"><a class="profile-links" href="#">My Order</a></li>
-                                        <li class="profile-li"><a class="profile-links" href="accountSetting.php">Account Setting</a></li>
-                                        <li class="profile-li"><a class="profile-links" href="#">Change Password </a></li>
-                                        <li class="profile-li"><a class="profile-links" href="logout.php">logout</a></li>
-
-                                        <?php }elseif(isset($_SESSION['email'])&& $_SESSION['userType'] == 'admin'){ ?>
-                                        <li class="upper-links"><a class="links" href="productAdd.php"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> SELL</a></li>
-                                        <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> NOTIFICATIONS</a></li>
-                                        <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> WISHLIST</a></li>
-                                        <li class="upper-links"><a class="links" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> CART</a></li>
-
-                                        <li class="upper-links dropdown"><a class="links">My Account</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="profile-li"><a class="profile-links" href="adminPart/adminDashboard.php">Admin Dashboard</a></li>
-                                                <li class="profile-li"><a class="profile-links" href="accountSetting.php">Account Setting</a></li>
-                                                <li class="profile-li"><a class="profile-links" href="#">Change Password </a></li>
-                                                <li class="profile-li"><a class="profile-links" href="logout.php">logout</a></li>
-
-
+                                <li class="profile-li"><a class="profile-links" href="#">logout</a></li>
                                 <?php }else { ?>
                                 <li class="upper-links dropdown"><a class="links">My Account</a>
                                     <ul class="dropdown-menu">
@@ -87,11 +60,10 @@
 
                                     </ul>
                                 </li>
-                            </ul></ul></ul>
+                            </ul>
                     </ul>
                 </div>
             </div>
-            <!--Login System Embedded by Jung End-->
 
 
 
@@ -107,10 +79,10 @@
                     <div class="row">
                         <input class="navbar-input col-xs-11" type="" placeholder="Search for Products, Brands and more" name="">
                         <button class="navbar-button col-xs-1">
-                        <svg width="15px" height="15px">
-                            <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
-                        </svg>
-                    </button>
+                          <svg width="15px" height="15px">
+                              <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
+                          </svg>
+                      </button>
                     </div>
                 </div>
 
@@ -120,10 +92,10 @@
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mySecondbar">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</button>
+  			<span class="icon-bar"></span>
+  			<span class="icon-bar"></span>
+  			<span class="icon-bar"></span>
+  			</button>
                 </div>
                 <!--Size-->
                 <div class="col-sm-2">
@@ -133,11 +105,12 @@
                 <!--Size-->
                 <div class="collapse navbar-collapse row" id="mySecondbar">
                     <ul class="nav navbar-nav fontnav">
-                        <li><a href="#">LATEST</a></li>
-                        <li><a href="#">MEN</a></li>
-                        <li><a href="#">WOMEN</a></li>
+                        <li><a href="#">BEST</a></li>
+                        <li><a href="#">MAN</a></li>
+                        <li><a href="#">WOMAN</a></li>
                         <li><a href="#">iACADEMY MERCHANDISE</a></li>
-                        <li><a href="#">CUSTOMIZE</a></li>
+                        <li><a href="#">SHOES</a></li>
+                        <li><a href="#">ETC</a></li>
                     </ul>
                     </li>
                     </ul>
@@ -146,40 +119,55 @@
             </div>
         </nav>
 
-        <!--First-->
+        <div class="container-fluid">
+            <br><br><br><br>
 
-        <div class="jumbotron text-center">
-            <h1>Slider here in this part</h1>
-            <p>with Sell Buy button</p>
-            <br><br><br>
-        </div>
-        <div class="col-md-12 text-center">
-            <br><br> Product list first line
-            <br><br><br><br><br><br><br>
-        </div>
-        <div class="col-md-12 text-center">
-            Product list second line
-            <br><br><br><br><br><br><br>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 text-center">
-                <h3>Column 1</h3> Best prod or man prod
-                <br><br><br><br><br><br><br>
-
+            <div class="title" id="title1">
+                <h2>Retrieve your password</h2>
             </div>
-            <div class="col-md-6 text-center">
-                <h3>Column 2</h3> woman prod
-                <br><br><br><br><br><br><br>
+            <div class="row">
+                <div class="col-md-6 ">
+                    <form class="form" id="form1" method="post" action="forgotpwProcess.php">
+                        <br>
 
-            </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control input-lg" placeholder="example: user@gmail.com" name="email">
+                        </div>
 
+                        <label class="radio"><input type="radio" name="userType" id="userType" value="student">Student</label>
+                        <label class="radio"><input type="radio" name="userType" id="userType" value="employee">Employee</label>
+
+                        <div class="form-group">
+                            <div>
+                                <button class="btn btn-primary" name="submit" type="submit">
+             Send
+            </button>
+                                <button type="reset" class="btn btn-default">Clear</button> <br/><br/>
+                                <span><a href="login.php">Already have an account? Login Here</a></span>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="col-md-6">
+                    <h1> Dont have account yet?</h1>
+                    <h3> Register so you can: </h3> <br>
+                    <p> Manage your iACADAMIT account </p>
+                    <p> Sell your shit / Buy your shit </p>
+                    <p> Add products to your whishlist </p>
+                    </br>
+
+                    <div class="form-group">
+                        <a href="signUp.php" class="btn btn-info" role="button">Sign Up!</a>
+                    </div>
+                    </form>
+
+                </div>
+            </div><br/>
+            <hr/><br/>
         </div>
-
-
-        </div>
-
-
 
         <!--Footer-->
         <footer class="footer1">
@@ -195,7 +183,7 @@
                                 <ul>
                                     <li><a href="aboutus.php"><i class="fa fa-angle-double-right"></i> About Us</a></li>
                                     <li><a href="contact.php"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
+                                    <li><a href="faq.php"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
 
                                 </ul>
 
@@ -210,10 +198,12 @@
                             <li class="widget-container widget_nav_menu">
                                 <h1 class="title-widget">CATEGORIES</h1>
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  WOMEN</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  MEN</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  WOMAN</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  MAN</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i>  MERCHANDISE</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i>  CUSTOMIZE</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  SHOES</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  BEST</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i>  LATEST</a></li>
 
                                 </ul>
@@ -223,7 +213,7 @@
                     <div class="col-lg-3 col-md-3">
                         <ul class="list-unstyled clear-margins">
                             <li class="widget-container widget_nav_menu">
-                                <h1 class="title-widget">Customer Care</h1>
+                                <h1 class="title-widget">Others</h1>
                                 <ul>
                                     <li><a href="announcement.php"><i class="fa fa-angle-double-right"></i> Announcement</a></li>
                                     <li><a href="termsnpolicy.php"><i class="fa fa-angle-double-right"></i> Terms & Policy</a></li>
@@ -231,6 +221,7 @@
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Advertisement</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Smart Book</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i> Test Centres</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  Announcement</a></li>
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i>  Computer Live</a></li>
 
                                 </ul>
@@ -292,6 +283,7 @@
                 </div>
             </div>
         </div>
+
 
 
 </body>

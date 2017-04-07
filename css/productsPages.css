@@ -1,0 +1,25 @@
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+
+}
+
+.formProduct1{
+  width: 800px;
+}
+
+.proBox1 {
+  border: 2px solid red;
+  width: 220px;
+  height: 250px;
+  float: left;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.buttons1 {
+	 float: none;
+  margin: 0 auto;
+  display:inline-block;
+}

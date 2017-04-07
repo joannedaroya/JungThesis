@@ -1,0 +1,53 @@
+
+/*======Main Page=====*/
+
+body {
+  background-color: green;
+}
+
+footer{
+	background: #333333;
+	opacity: 0.9;
+	width: 100%;
+	overflow: hidden;
+}
+
+section{
+	width: 29%;
+	float: left;
+	margin: 2% 2%;
+	text-align: center;
+}
+
+footer p, footer h3{
+	color : #FFF;
+}
+
+footer p a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+ul.social li{
+	display: inline;
+}
+
+ul.social li img{
+	height:50px;
+	border-radius: 50%;
+	transform: rotate(15deg) scale(1);
+	transition: .3s ease-in-out;
+}
+
+ul.social:hover li img{
+	transform: rotate(0) scale(1);
+}
+
+footer.second {
+	border-top: 1px solid #FFF;
+	background:black;
+	max-height: 50px;
+	text-align: center;
+	opacity: 0.8;
+}
+/*===========================*/
