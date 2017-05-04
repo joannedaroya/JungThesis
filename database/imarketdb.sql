@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2017 at 03:36 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Generation Time: Apr 08, 2017 at 09:54 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -55,14 +55,6 @@ CREATE TABLE `products` (
   `productStatus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`product_id`, `owner_email`, `productName`, `price`, `shortDes`, `longDes`, `productCategory`, `genderCategory`, `productImage`, `QTY`, `date_created`, `date_update`, `productStatus`) VALUES
-(4, 'khellytaguinod@gmail.com', 'carlo jamie', '500.00', 'sex slave', '', 'Collectibles', '', '12316350_10204803598243193_2169619349611866090_n.jpg', 1, 'April 4, 2017 8:29:pm  ', '', 1),
-(5, 'khellytaguinod@gmail.com', 'jamie carlo zane', '5.00', 'prostitute ', '', 'Services', '', 'Meme (1).png', 5, 'April 5, 2017 5:27:pm  ', 'April 5, 2017 9:30:pm  ', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -76,18 +68,17 @@ CREATE TABLE `users` (
   `lastName` varchar(10) NOT NULL,
   `contactNum` varchar(15) NOT NULL,
   `birthDate` date NOT NULL,
-  `userType` varchar(10) NOT NULL
+  `userType` varchar(10) NOT NULL,
+  `userStatus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`email`, `password`, `firstName`, `lastName`, `contactNum`, `birthDate`, `userType`) VALUES
-('emplyoee@tiem.com', 'Asdf1234', 'hello', 'hi', '0246152465', '2010-01-05', 'employee'),
-('jung@test.com', 'Asdf1234', 'Jaehoon', 'Jung', '09167737988', '1992-04-11', 'student'),
-('khellytaguinod@gmail.com', '12345', 'Khelly', 'Taguinod', '5455111', '2017-04-21', 'student'),
-('taguinodjheremy@gmail.com', '12345', 'jheremy', 'capatice', '09526622626', '2017-08-01', 'student');
+INSERT INTO `users` (`email`, `password`, `firstName`, `lastName`, `contactNum`, `birthDate`, `userType`, `userStatus`) VALUES
+('jheremykhelly@gmail.com', 'A!12345678', 'Jheremy', 'Khelly', '+09876543', '0057-12-07', 'student', 1),
+('khellytaguinod@gmail.com', 'A@12345678', 'Khelly', 'Taguinod', '+63977321', '2008-06-09', 'student', 1);
 
 --
 -- Indexes for dumped tables

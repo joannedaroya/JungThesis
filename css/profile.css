@@ -89,7 +89,6 @@ a:active, a:hover {
 
 .page-wrapper {
   padding-left: 2rem;
-  background-color: #fbfbfb;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,4 +98,11 @@ a:active, a:hover {
 
 .deactivate {
   align-self: center;
+}
+
+.deac-form {
+  text-align: center;
+  margin: auto;
+  width: 70%;
+  padding: 10px;
 }

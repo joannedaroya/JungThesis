@@ -5,15 +5,29 @@ html, body{
 
 
 #form1 {
-  padding-left: 250px;
+     width: 300px;
+     float: right;
+     margin: 0 auto;
+}
+
+.form11 {          // hehe found in registerWelcome.php
+    width: 50px;
+    float: right;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form22 {
+    width: 300px;
 }
 
 #title1 {
-  padding-left: 200px;
+    width: 350px;
+    float: none;
+    margin: 0 auto;
 }
 
 #form2 {
-	padding: 5px 45px 5px 45px;
 }
 
 

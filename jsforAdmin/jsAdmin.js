@@ -11,9 +11,3 @@ $(function () {
   		$('.search-input').focus();
   	});
   });
-
-
-
-$  (function goBack() {
-      window.history.back();
-  });

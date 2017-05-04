@@ -1,20 +1,7 @@
 <?php
 
-//putek gumana ka rin naiiyak na ako huhuhu rak na ituh
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "imarketdb";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+session_start();
+require_once('connector.php');
 
 
   // prepare and bind time fck
@@ -26,12 +13,25 @@ if ($conn->connect_error) {
   $uploadOk = 1;
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);  // dont touch used to upload image property of khelly
 
+  $target_dir1 = "productImages/productSize/"; // dont touch used to upload image property of khelly
+  $target_file1 = $target_dir1 . basename($_FILES["sizeChart"]["name"]);
+  $uploadOk1 = 1;
+  $imageFileType1 = pathinfo($target_file1,PATHINFO_EXTENSION);  // dont touch used to upload image property of khelly
+
   $ptitle = $_POST['title'];
-  $powner = $_POST['ownerEmail'];
+  $pownerID = $_POST['ownerID'];
   //$pcategory = $_POST['category'];
 
   $pcategory = $_POST['category'];
+  $pgender=$_POST['gender'];
 
+  if($pgender == 'woman'){
+    $pgender = 'woman';
+  }elseif($pgender == '0'){
+    $pgender = 'NA';
+  }else{
+    $pgender = 'man';
+  }
   //pricepart dont touch
   $pprice = $_POST['price'];
   setlocale(LC_MONETARY,"en_US");            //money shit dont touch
@@ -40,12 +40,18 @@ if ($conn->connect_error) {
   $pstats = 1;
   $pqty = $_POST['qty'];
 
+  $pOnsale = "OnSale";
+
   $photo=$_FILES['fileToUpload']['name'];    //dont touch used to upload image property of khelly
+  $photo1=$_FILES['sizeChart']['name'];    //dont touch used to upload image property of khelly
+
 
   date_default_timezone_set('Asia/Manila');  // creating date_created
   $createdate =date('F j, Y g:i:a  ');          // date_created format
 
 
+  if (move_uploaded_file($_FILES["sizeChart"]["tmp_name"], $target_file1)) {
+   }
 
 
   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
@@ -61,22 +67,20 @@ if ($conn->connect_error) {
 	} else {
 		if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-      $stmt = $conn->prepare("INSERT INTO products (productName, owner_email, price, shortDes, productCategory, productImage, QTY, date_created, productStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+      $stmt = $dbconn->prepare("INSERT INTO products (productName, user_ID, genderCategory, price, shortDes, productCategory, productImage, productSize, p_qty, date_created, productActive, productStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-      $stmt->bind_param("ssdsssisi", $ptitle, $powner, $pprice, $pdes, $pcategory, $photo, $pqty, $createdate, $pstats);
+      $stmt->bind_param("sssdssssisis", $ptitle, $pownerID, $pgender, $pprice, $pdes, $pcategory, $photo, $photo1, $pqty, $createdate, $pstats, $pOnsale);
 
       $stmt->execute();
       $stmt->close();
 
       echo"<script>window.alert('Post uploaded Successfully !');</script>";
-      echo"<script>location.href='productAdd.php';</script>";
+      echo"<script>location.href='productview.php';</script>";
 			} else {
           echo"<script>window.alert('Sorry, there was an error uploading your file.');</script>";
 		      echo"<script>location.href='index.php';</script>";
 			}
 		}
-
-
 
 
 $conn->close();

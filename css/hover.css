@@ -1,0 +1,35 @@
+
+.PHOTOHOVER {
+    position: relative;
+}
+
+.image {
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  max-width: 80%;
+  height: auto;
+  width: auto\9;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.PHOTOHOVER:hover .image {
+  opacity: 0.3;
+}
+
+.PHOTOHOVER:hover .middle {
+  opacity: 1;
+}
+
+.text11 {
+
+}
